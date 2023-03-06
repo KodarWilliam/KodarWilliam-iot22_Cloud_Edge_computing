@@ -1,0 +1,12 @@
+# docker-compose.yml
+# To run: docker-compose up --build -d
+services:
+  web:
+    build: .
+    image: kodarwilliam/cloudwebsite
+    environment:
+      FLASK_DEBUG: true
+    ports:
+      - 5000:80
+    volumes:
+      - "./database.db:/cloudwebsite/database.db"
